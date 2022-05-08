@@ -1,0 +1,32 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.video-container {
+  border: 1px solid #000000;
+  margin: 30px;
+  max-width: 2000px;
+  max-height: 2000px;
+}
+/* 
+.custom-row{
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
+.col-3{
+  position:relative;
+  width:100%;
+  padding-right:15px;
+  padding-left:15px;
+  -ms-flex:0 0 25%;
+  flex:0 0 25%;
+  max-width:25%
+}
+.col-9{
+  grid-column: 5/10;
+} */
