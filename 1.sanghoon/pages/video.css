@@ -78,16 +78,42 @@ body {
 .memo-container{
   grid-column: 1/5;
   position: relative;
-  justify-content: center;
   border-style: solid;
   border-width: 3px;
   border-color: black;
+}
+
+.memo-head{
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #memoarea{
   padding: 20px;
   width: 100%;
   height: 300px;
+  font-size: 15px;
+}
+
+#memo-title{
+  font-size: 20px; 
+  font-family: sans-serif;
+  color: aliceblue;
+  margin-left: 20ox;
+  margin-right: 40px;
+}
+#memo-font-size{
+  width: 50px;
+  margin-left: 10ox; 
+  margin-right: 10px;
+}
+#memo-font-color{
+  margin-left: 10ox; 
+  margin-right: 10px;
 }
 
 video {
@@ -362,18 +388,10 @@ svg {
 .speed-box{
   background-color: rgba(0, 0, 0, 0.3);
   position: absolute;
-  top:100%;
+  bottom:100%;
   display: none;
   align-items:flex-start;
-  flex-direction: column;
-}
-
-.cur-mark{
-  color: #fff;
-  font-size: 20px;
-  fill: #fff;
-  cursor: pointer;
-  align-content: center;
+  flex-direction: column-reverse;
 }
 
 .bm-box{
@@ -383,4 +401,23 @@ svg {
   bottom:100%;
   align-items:flex-start;
   flex-direction: column-reverse;
+}
+
+.bm-submit{
+  display: flex;
+  align-items: center;
+}
+
+.bm-name{
+  height: 100%;
+  width: 140px;
+  font-size: 16px;
+}
+
+.bm-submit-button{
+  color: #fff;
+  font-size: 16px;
+  fill: #fff;
+  cursor: pointer;
+  align-content: center;
 }

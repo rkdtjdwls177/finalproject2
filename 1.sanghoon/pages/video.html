@@ -74,7 +74,10 @@
               </svg>
             </button>
             <div class="bm-box" id="bm-box">
-              <button class="cur-mark" id="cur-mark">현재 위치 북마크</button>
+              <div class="bm-submit" id="bm-submit">
+                <input class="bm-name" id="bm-name" type="text">
+                <button class="bm-submit-button" id="bm-submit-button">저장</button>
+              </div>
             </div>
             <button data-title="Memo" class="memo-button" id="memo-button">
               <svg>
@@ -116,9 +119,19 @@
       <ul>
       </ul>
     </div>
-    <div class="memo-container" id="memo-box">
+
+
+    <div class="memo-container" id="memo-container">
+      <p class="memo-head" id="memo-head">
+        <a id="memo-title">메모장</a>
+        <a style="font-family: sans-serif;">크기:</a>
+        <input type="number" id="memo-font-size" value="15">
+        <a style="font-family: sans-serif;">색:</a>
+        <input type="color" id="memo-font-color" value="#000000">
+      </p>
       <textarea name="memoarea" id="memoarea"></textarea>
     </div>
+
   </div>
 
   <svg style="display: none">
