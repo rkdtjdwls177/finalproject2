@@ -4,9 +4,8 @@
 }
 
 html {
-  box-sizing: border-box;
+  box-sizing: content-box;
   font-family: "YouTube Noto",Roboto,Arial,Helvetica,sans-serif;
-  height: 100%;
 }
 
 *, *::before, *::after {
@@ -16,18 +15,15 @@ html {
 }
 
 body {
-  height: 100%;
 }
 
 .container {
   width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
 
 .video-container {
-  background-color: black;
   grid-column: 1/5;
   width: 100%;
   margin: 0;
@@ -118,7 +114,6 @@ body {
 
 video {
   width: 100%;
-  height: 100%;
 }
 
 .video-controls {

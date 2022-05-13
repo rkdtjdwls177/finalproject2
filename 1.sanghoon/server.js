@@ -10,15 +10,14 @@ const mongoose = require('mongoose')
 const app = express()
 mongoose.connect('mongodb://localhost:27017/my_database', {useNewUrlParser : true})
 app.set('view engine', 'ejs')
-app.use(express.static(__dirname + '/pages'))
-app.use(express.static(__dirname + '/video'))
+app.use(express.static(__dirname + '/'))
 
 app.listen(8000, function(){
     console.log('App listening')
 })
 
 app.get('/',function(req,res){
-    res.sendFile(path.resolve(__dirname + '/pages/video.html'))
+    res.sendFile(path.resolve(__dirname + '/pages/lecturehome.html'))
 })
 
 app.get('/video', function(req,res){

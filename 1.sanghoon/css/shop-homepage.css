@@ -7,12 +7,18 @@ body {
   padding-top: 56px;
 }
 
-.video-container {
-  border: 1px solid #000000;
+.lecture-video{
+  border: none;
+  width: 100%;
+  height: 100%;
   margin: 30px;
-  max-width: 2000px;
-  max-height: 2000px;
+  height: 1000px;
 }
+
+.video-container{
+  
+}
+
 /* 
 .custom-row{
   display: grid;
