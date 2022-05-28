@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('layouts/header'); -%>
+  
+  <body> 
+  <%- include('layouts/navbar'); -%>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: purple">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Home</h1>
+            <span class="subheading">just home</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <%- include('layouts/footer'); -%>
+  <%- include('layouts/scripts'); -%>
+
+  <script>
+    if(countycode!="KR")
+    {
+      alert("해외접속이 감지 되었습니다. 로그인 불가지역입니다");
+    }
+    </script>
+
+</body>
+
+</html>
