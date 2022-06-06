@@ -51,7 +51,7 @@
 
     <div class="row">
 
-      <div class="col-lg-2">
+      <div class="col-lg-2" id="left-nav">
 
         <h1 class="my-4">Lecture Name</h1>
         <select name="subjects">
@@ -68,8 +68,16 @@
 
       </div>
       <!-- /.col-lg-3 -->
-      <div class="col-lg-10 video-container" >
-        <iframe class='lecture-video' src="/pages/video.html"  scrolling="no"></iframe>
+      <div class="col-lg-10 video-container">
+        <div class="video-head">
+          <button id="list-button">
+            <svg>
+              <use href="#list"></use>
+            </svg>
+          </button>
+          <h2 id="video-title">비디오이름</h2>
+        </div>
+        <iframe class='lecture-video' id="lecture-video" src="/views/video.html"  scrolling="no"></iframe>
       </div>
       <!-- /.col-lg-9 -->
 
@@ -87,10 +95,21 @@
     <!-- /.container -->
   </footer>
 
+  <svg style="display: none;">
+    <defs>
+      <symbol id="list" viewBox="0 0 100 100">
+        <circle cx="18.132" cy="26.545" r="7.131"/>
+        <rect x="33.619" y="21.486" width="56.292" height="10.118"/>
+        <circle cx="18.132" cy="51.219" r="7.131"/>
+        <rect x="33.619" y="46.159" width="56.292" height="10.118"/>
+        <circle cx="18.132" cy="76.033" r="7.131"/>
+        <rect x="33.619" y="70.975" width="56.292" height="10.117"/>
+      </symbol>
+    </defs>
+  </svg>
   <!-- Bootstrap core JavaScript -->
   <script src="/vendor/jquery/jquery.min.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="/public/js/lecturehome-serv.js"></script>
 </body>
-
 </html>

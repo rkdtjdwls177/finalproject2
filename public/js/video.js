@@ -1,6 +1,8 @@
 // Select elements here
+const container = document.getElementById('container');
 const video = document.getElementById('video');
 const videoControls = document.getElementById('video-controls');
+const videoContainer = document.getElementById('video-container');
 const playButton = document.getElementById('play');
 const playbackIcons = document.querySelectorAll('.playback-icons use');
 const timeElapsed = document.getElementById('time-elapsed');
@@ -16,22 +18,26 @@ const volumeHigh = document.querySelector('use[href="#volume-high"]');
 const volume = document.getElementById('volume');
 const playbackAnimation = document.getElementById('playback-animation');
 const fullscreenButton = document.getElementById('fullscreen-button');
-const videoContainer = document.getElementById('video-container');
 const fullscreenIcons = fullscreenButton.querySelectorAll('use');
 const pipButton = document.getElementById('pip-button');
 const memoButton = document.getElementById('memo-button');
 const memoIcon = memoButton.querySelector('svg');
-const memoBox = document.getElementById('memo-box');
+const memoBox = document.getElementById('memo-container');
+const memoarea = document.getElementById('memoarea');
+const memoFontSize = document.getElementById('memo-font-size');
+const memoFontColor = document.getElementById('memo-font-color');
 const BMButton = document.getElementById('bm-button');
-const BMIcon = BMButton.querySelector('svg')
+const BMIcon = BMButton.querySelector('svg');
 const BMBox = document.getElementById('bm-box');
-const addBMButton = document.getElementById('cur-mark');
+const BMname = document.getElementById('bm-name');
+const addBMButton = document.getElementById('bm-submit-button');
 const speedButton = document.getElementById('speed-button')
 const speedBox = document.getElementById('speed-box')
 const speed = document.querySelectorAll('.speed-box .speed-button')
 const videoListContainer = document.getElementById('video-list-container')
 const openlistButton = document.getElementById('open-list')
 const closelistButton = document.getElementById('close-list')
+const wideButton = document.getElementById('wide-button')
 
 const videoWorks = !!document.createElement('video').canPlayType;
 if (videoWorks) {
@@ -310,6 +316,7 @@ function showControls() {
 // each supported shortcut key
 function keyboardShortcuts(event) {
   const { key } = event;
+
   switch (key) {
     case 'k', ' ':
       togglePlay();
@@ -331,6 +338,28 @@ function keyboardShortcuts(event) {
     case 'p':
       togglePip();
       break;
+    case 'ArrowUp':
+      if(volume.value > 0.9){
+        volume.value = 1;
+      }else{
+        volume.value += 0.1;
+      }
+      video.volume = volume.value;
+      break; 
+    case 'ArrowDown':
+      if(volume.value < 0.1){
+        volume.value = 0;
+      }else{
+        volume.value -= 0.1;
+      }
+      video.volume = volume.value;
+      break;   
+    case 'ArrowLeft':
+      video.currentTime -= 5;
+      break;
+    case 'ArrowRight':
+      video.currentTime += 5;
+      break;
   }
 }
 
@@ -345,6 +374,13 @@ function toggleMemo(){
     memoIcon.style.fill = "rgba(200,200,200,0.6)";
     memoIcon.style.stroke = "rgba(200,200,200,0.6)";
   }
+}
+
+function toggleMemoFont(){
+  const fontSize = memoFontSize.value + "px";
+  const fontColor = memoFontColor.value;
+  memoarea.style.setProperty('font-size', fontSize);
+  memoarea.style.setProperty('color', fontColor);
 }
 
 function toggleBM(){
@@ -364,7 +400,9 @@ function addBM(){
   BM = document.createElement('button');
   const cur = video.currentTime;
   const time = formatTime(Math.round(cur));
-  BM.innerText = `${time.minutes}:${time.seconds}`;
+  BM.innerText = `${time.minutes}:${time.seconds} `+ BMname.value;
+  BM.style.setProperty('color', '#ffffff');
+  BM.style.setProperty('font-size', '16px');
   BM.addEventListener('click',function(){
     video.currentTime = cur;
     progressBar.value = cur;
@@ -393,6 +431,16 @@ function closeList(){
 }
 
 
+function wideToggle(){
+  if(container.style.width == '800px'){
+    container.style.width = '1100px'
+    closeList()
+  }else{
+    container.style.width = '800px'
+  }
+}
+
+
 // Add eventlisteners here
 playButton.addEventListener('click', togglePlay);
 video.addEventListener('play', updatePlayButton);
@@ -415,15 +463,18 @@ fullscreenButton.addEventListener('click', toggleFullScreen);
 videoContainer.addEventListener('fullscreenchange', updateFullscreenButton);
 pipButton.addEventListener('click', togglePip);
 memoButton.addEventListener('click', toggleMemo);
+memoarea.addEventListener('focusin', toggleMemoFont);
 BMButton.addEventListener('click', toggleBM);
 speedButton.addEventListener('click', toggleSpeedBox);
 openlistButton.addEventListener('click', openList);
 closelistButton.addEventListener('click', closeList);
 addBMButton.addEventListener('click', addBM);
+wideButton.addEventListener('click', wideToggle);
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!('pictureInPictureEnabled' in document)) {
     pipButton.classList.add('hidden');
   }
 });
-document.addEventListener('keyup', keyboardShortcuts);
+
+video.addEventListener('keyup', keyboardShortcuts);

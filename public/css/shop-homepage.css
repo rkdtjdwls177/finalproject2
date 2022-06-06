@@ -7,32 +7,29 @@ body {
   padding-top: 56px;
 }
 
-.lecture-video{
-  border: none;
-  width: 100%;
-  height: 100%;
-  margin: 30px;
-  height: 1000px;
+
+
+.col-lg-2{
+}
+
+.container{
 }
 
 .video-container{
-  
+  padding: 30px;
 }
-
-/* 
-.custom-row{
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
+.lecture-video{
+  width: 100%;
+  height: 900px;
+  border: none;
 }
-.col-3{
-  position:relative;
-  width:100%;
-  padding-right:15px;
-  padding-left:15px;
-  -ms-flex:0 0 25%;
-  flex:0 0 25%;
-  max-width:25%
+#video-title{
+  display: inline;
 }
-.col-9{
-  grid-column: 5/10;
-} */
+#list-button{
+  display: none;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 30px;
+}
