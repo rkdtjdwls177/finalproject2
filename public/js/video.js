@@ -478,3 +478,55 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 video.addEventListener('keyup', keyboardShortcuts);
+
+
+const animation = document.getElementsByClassName('animation');
+const design = document.getElementsByClassName('design');
+const forest = document.getElementsByClassName('forest');
+const paint = document.getElementsByClassName('paint'); 
+const rings = document.getElementsByClassName('rings');
+const search = document.getElementsByClassName('search');
+
+for(var i=0; i<animation.length; i++){
+  animation.item(i).addEventListener('click', function(){
+    video.src = "http://localhost:4000/video/animation.mp4"
+    updatePlayButton()
+  })
+}
+
+for(var i=0; i<design.length; i++){
+  design.item(i).addEventListener('click', function(){
+    video.src = "http://localhost:4000/video/design.mp4"
+    updatePlayButton()
+  })
+}
+
+for(var i=0; i<forest.length; i++){
+  forest.item(i).addEventListener('click', function(){
+    video.src = "http://localhost:4000/video/forest.mp4"
+    updatePlayButton()
+  })
+}
+
+for(var i=0; i<paint.length; i++){
+  paint.item(i).addEventListener('click', function(){
+    video.src = "http://localhost:4000/video/paint.mp4"
+    updatePlayButton()
+  })
+}
+
+for(var i=0; i<rings.length; i++){
+  rings.item(i).addEventListener('click', function(){
+    video.src = "http://localhost:4000/video/rings.mp4"
+    updatePlayButton()
+  })
+}
+
+for(var i=0; i<search.length; i++){
+  search.item(i).addEventListener('click', function(){
+    video.src = "http://localhost:4000/video/search.mp4"
+    updatePlayButton()
+  })
+}
+
+

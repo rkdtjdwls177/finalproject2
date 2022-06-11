@@ -16,6 +16,11 @@
   <!-- Custom styles for this template -->
   <link href="/public/css/shop-homepage.css" rel="stylesheet">
 
+  <script>
+    const lectVideo = document.getElementById('lecture-video');
+    const listContainer = lectVideo.contentWindow.getElementById('video-list-container');
+    listContainer.style.display = 'none';
+  </script>
 </head>
 
 <body>
@@ -75,7 +80,9 @@
               <use href="#list"></use>
             </svg>
           </button>
-          <h2 id="video-title">비디오이름</h2>
+          <h2 id="video-title">
+            <%= lecture[0].title%>
+          </h2>
         </div>
         <iframe class='lecture-video' id="lecture-video" src="/views/video.html"  scrolling="no"></iframe>
       </div>
@@ -110,6 +117,5 @@
   <!-- Bootstrap core JavaScript -->
   <script src="/vendor/jquery/jquery.min.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/public/js/lecturehome-serv.js"></script>
 </body>
 </html>
